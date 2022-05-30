@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="vieport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat sheet Powershell</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Cheat sheet</h1>
+    </header>
+    <main>
+        <h3>Cheat sheet PowrShell</h3>
+        <h4><span class="cl-param">Название параметра</span>, <span class="cl-val">значение параметра</span></h4>
+        <div class="list-1">
+
+            <div class="row_1">
+
+                <table>
+                    <caption>Основные команды</caption>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-Command (или gcm)</span>
+                        </td>
+                        <td>Список всех команд</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-Member (или gm)</span>
+                        </td>
+                        <td>Свойства и методы объекта</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-Help (или man)</span>
+                        </td>
+                        <td>Получает помощь</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-Help</span>
+                            <span class="cl-val">about*</span>
+                        </td>
+                        <td>Описание справ. категорий</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">man</span>
+                            <span class="cl-val">&lt;NameCommand&gt;</span>
+                            <span class="cl-param">-Parameter</span>
+                            <span class="cl-val">&lt;NameParameter&gt;</span>
+                        </td>
+                        <td>Справка по параметру команды</td>
+                    </tr>
+                </table>
+
+                <table>
+                    <caption>Навигация по ресурсам</caption>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Set-Location (или cd)</span>
+                            <span class="cl-val">.</span>
+                        </td>
+                        <td>Тек. дериктория</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Set-Location</span>
+                            <span class="cl-val">..</span>
+                        </td>
+                        <td>Переход на уровень выше</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Set-Location</span>
+                            <span class="cl-val">~</span>
+                        </td>
+                        <td>Переход в папку тек. пользователя</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Set-Location</span>
+                            <span class="cl-param">-Path</span>
+                            <span class="cl-val">C:\Temp</span>
+                        </td>
+                        <td>Переход в папку <i>C:\Temp</i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">pwd</span>
+                        </td>
+                        <td>Вывод тек. дериктории</td>
+                    </tr>
+                </table>
+
+                <table>
+                    <caption>Работа с файлами</caption>
+                    <tr>
+                        <td><span class="cl-command">Get-ChildItem (или ls, dir)</span></td>
+                        <td>список файлов и папок</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-ChildItem</span>
+                            <span class="cl-param">-Path</span>
+                            <span class="cl-val">C:\*</span>
+                        </td>
+                        <td>список файлов и папок</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-ChildItem</span>
+                            <span class="cl-param">-Path</span>
+                            <span class="cl-val">C:\Users, C:\Temp</span>
+                        </td>
+                        <td>Содержание 2-х папок</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-val">"C:\Users"</span> |
+                            <span class="cl-command">Get-ChildItem</span>
+                        </td>
+                        <td>Содержание <i>C:\Users</i></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-ChildItem</span>
+                            <span class="cl-param">-Path</span>
+                            <span class="cl-val">C:\*</span>
+                            <span class="cl-param">-Include</span>
+                            <span class="cl-val">*.zip</span>
+                        </td>
+                        <td>список zip файлов </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-ChildItem</span>
+                            <span class="cl-param">-Path</span>
+                            <span class="cl-val">C:\*</span>
+                            <span class="cl-param">-Exclude</span>
+                            <span class="cl-val">*.zip</span>
+                        </td>
+                        <td>список файлов кроме zip</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-ChildItem</span>
+                            <span class="cl-param">-Recurse</span>
+                        </td>
+                        <td>список файлов и папок с вложениями</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-ChildItem</span>
+                            <span class="cl-param">-File</span>
+                        </td>
+                        <td>список файлов</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-ChildItem</span>
+                            <span class="cl-param">-Directory</span>
+                        </td>
+                        <td>список папок</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-Item</span>
+                            <span class="cl-val">C:\Temp</span>
+                        </td>
+                        <td>Получает свойства элемента</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <span class="cl-command">New-Item</span>
+                        </td>
+                        <td>Создание элемента</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">New-Item</span>
+                            <span class="cl-param">-name</span>
+                            <span class="cl-val">myFile1, myFile2</span>
+                        </td>
+                        <td>Создание файлов <i>myFile1, myFile2</i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">New-Item</span>
+                            <span class="cl-val">myFile1</span>
+                            <span class="cl-param">-Path</span>
+                            <span class="cl-val">c:\</span>
+                        </td>
+                        <td>Создание файла в корне <i>C:</i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">New-Item</span>
+                            <span class="cl-val">myFile1</span>
+                            <span class="cl-param">-Value</span>
+                            <span class="cl-val">"text for file"</span>
+                        </td>
+                        <td>создать файл с текстом <i>text for file</i></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <span class="cl-command">New-Item</span>
+                            <span class="cl-val">myFile1</span>
+                            <span class="cl-param">-ItemType</span>
+                            <val>File/Directory</val>
+                        </td>
+                        <td>Создание файла/папки</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <span class="cl-command">Remove-Item</span>
+                        </td>
+                        <td>Удаление элемента</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Remove-Item</span>
+                            <span class="cl-val">C:\Temp\*</span>
+                        </td>
+                        <td>Удаление элементов в папке <i>C:\Temp</i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Remove-Item</span>
+                            <span class="cl-val">C:\Temp\*</span>
+                            <span class="cl-param">-Recurse</span>
+                        </td>
+                        <td>Удаление элементов включая вложенные папки</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <span class="cl-command">Copy-Item</span>
+                            <span class="cl-val">file1 file2</span>
+                        </td>
+                        <td>Копирование <i>file1</i> в <i>file2</i></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <span class="cl-command">Move-Item</span>
+                            <span class="cl-val">file1 file2</span>
+                        </td>
+                        <td>Перемещение/переименование файла или папки</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Move-Item</span>
+                            <span class="cl-param">-Path</span>
+                            <span class="cl-val">C:\Temp</span>
+                            <span class="cl-param">-Destination</span>
+                            <span class="cl-val">E:\</span>
+                        </td>
+                        <td>Перемещение папки <i>Temp</i> с файлами в корень диска <i>E:</i></td>
+                    </tr>
+
+                    <!-- комманда -->
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-Content</span>
+                        </td>
+                        <td>Содержание файла</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-Content</span>
+                            <span class="cl-val">.\temp.txt</span>
+                        </td>
+                        <td>Содержание файла temp.txt</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-Content</span>
+                            <span class="cl-param">-Path</span>
+                            <span class="cl-val">.\*</span>
+                            <span class="cl-param">-Filter</span>
+                            <span class="cl-val">*.log</span>
+                        </td>
+                        <td>Содержание файлов log</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <span class="cl-command">Add-Content</span>
+                        </td>
+                        <td>Добавляет в конец файла данные</td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+
+            <div class="row_2">
+
+                <table>
+                    <caption>Информационные команды</caption>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-Alias</span>
+                        </td>
+                        <td>Список алиасов</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-Alias</span>
+                            <span class="cl-param">-Definition </span>
+                            <span class="cl-val">get-alias</span>
+                        </td>
+                        <td>Алиасы для команды <i>get-alias</i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-PSprovider</span>
+                        </td>
+                        <td>Получение информации о поставщике</td>
+                    </tr>
+                </table>
+
+                <table>
+                    <caption>Команды форматирования</caption>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Sort-Object</span>
+                        </td>
+                        <td>Сортировка данных</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Sort-Object</span>
+                            <span class="cl-val">Size</span>
+                            <span class="cl-param">-Descending</span>
+                        </td>
+                        <td>Сортировка данных по убыванию</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <span class="cl-command">Format-Table (или ft)</span>
+                        </td>
+                        <td>Вывод параметров в колонки</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-Process | ft</span>
+                            <span class="cl-param">-Property</span>
+                            <span class="cl-val">*</span>
+                        </td>
+                        <td>Вывод всех свойств</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <span class="cl-command">Get-Process | ft</span>
+                            <span class="cl-param">-Property</span>
+                            <span class="cl-val">ID, Name</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <span class="cl-command">Get-Process | ft</span>
+                            <span class="cl-param">-Property</span>
+                            <span class="cl-val">ID, Name</span>
+                            <span class="cl-param">-GroupBy</span>
+                            <span class="cl-val">Company</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <span class="cl-command">Format-List (или fl)</span>
+                        </td>
+                        <td>Вывод параметров в строки</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-Process | fl</span>
+                            <span class="cl-val">*</span>
+                        </td>
+                        <td>Вывод всех параметров</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <span class="cl-command">Get-Process | fl</span>
+                            <span class="cl-param">-Property</span>
+                            <span class="cl-val">ID, Name</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <span class="cl-command">Select-Object (или select)</span>
+                        </td>
+                        <td>Выборка объектов и его свойств</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">ForEach-Object (или %)</span>
+                        </td>
+                        <td>Выполняет операцию для каждого элемента вх данных</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <span class="cl-command">ls env:path | % {$_.value -split ";"}</span>
+                        </td>
+                        <td>Разбор строки реквизита объекта</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <span class="cl-command">Measure-Object</span>
+                        </td>
+                        <td>Команда расчета</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">ls | measure-object</span>
+                            <span class="cl-param">-Property</span>
+                            <span class="cl-val">Length</span>
+                            <span class="cl-param">-sum</span>
+                        </td>
+                        <td>Размер файлов в тек. папке</td>
+                    </tr>
+
+                </table>
+
+                <table>
+                    <caption>Менеджер ресурсов</caption>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-Process (или gps)</span>
+                        </td>
+                        <td>Запущенные процессы</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Stop-Process</span>
+                        </td>
+                        <td>Останавливает один и более процессов</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Stop-Process</span>
+                            <span class="cl-param">-Id</span>
+                            <span class="cl-val">9885</span>
+                            </span>
+                        </td>
+                        <td>Останавка процесса с id <i>9885</i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-Service</span>
+                        </td>
+                        <td>Сервисы на лок. или уд. компьютере</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Stop-Service</span>
+                        </td>
+                        <td>Останавка одного или несколько запущенных служб</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Stop-Service</span>
+                            <span class="cl-param">-Name</span>
+                            <span class="cl-val">AppMgmt</span>
+                        </td>
+                        <td>Останавка службы <i>AppMgmt</i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Start-Service</span>
+                        </td>
+                        <td>Запуск одной или больше остановленных служб</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-Volume</span>
+                        </td>
+                        <td>Получает объекты</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-PSProvider</span>
+                        </td>
+                        <td>Поставщики услуг</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-PSdrive</span>
+                        </td>
+                        <td>Ресурсы поставщиков услуг</td>
+                    </tr>
+
+                </table>
+
+                <table>
+                    <caption>Сетевые команды</caption>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Test-Connection</span>
+                        </td>
+                        <td>Отправка ICMP запросов</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Test-Connection</span>
+                            <span class="cl-param">-ComputerName</span>
+                            <span class="cl-val">server02</span>
+                        </td>
+                        <td>Отправка ICMP запроса на <i>server02</i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Test-Connection</span>
+                            <span class="cl-val">server02</span>
+                            <span class="cl-param">-Count</span>
+                            <span class="cl-val">1</span>
+                        </td>
+                        <td>Отправка 1-го пакета ICMP на <i>server02</i></td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="row_3">
+                <table>
+                    <caption>Операторы</caption>
+                    <tr>
+                        <td>
+                            <span class="cl-command">1..10 | foreach {$_ * 2}</span>
+                        </td>
+                        <td>Диапазон</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">-and, -or, -xor, -not, !</span>
+                        </td>
+                        <td>Логические операторы</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">-eq, -ne</span>
+                        </td>
+                        <td>равно, не равно</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">-gt, -ge</span>
+                        </td>
+                        <td>больше, больше или равно</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">-lt, -le</span>
+                        </td>
+                        <td>меньше, меньше или равно</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">-like, -nolike</span>
+                        </td>
+                        <td>выполняют сопоставление шаблонов с использованием таких символов как *(ноль или более
+                            символов) или ?(один символ)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">-match, -nomatch</span>
+                        </td>
+                        <td>регулярные выражения</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">-contains, -notcontains</span>
+                        </td>
+                        <td>операторы вложения</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">-replace</span>
+                        </td>
+                        <td>Оператор замены с использование рег. выражения</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">-split, -join</span>
+                        </td>
+                        <td>Операторы разделения объединения</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-val">$d</span>
+                            <span class="cl-command">= get-data('25/05/2022')</span>
+                        </td>
+                        <td>Присваивание даты переменной <i>d</i></td>
+                    </tr>
+                </table>
+
+                <table>
+                    <caption>Политика выполнения</caption>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-ExecutionPolicy</span>
+                        </td>
+                        <td>Текущая политика выполнения</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Области: {MachinePolicy|UserPolicy|Process|CurrentUser|LocalMachine}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Политики:
+                            {AllSigned|Bypass|Default|RemoteSigned|Restricted|Undefined|Unrestricted}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-ExecutionPolicy</span>
+                            <span class="cl-param">-List</span>
+                        </td>
+                        <td>Политика выполнения каждой области</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Get-ExecutionPolicy</span>
+                            <span class="cl-param">-Scope</span>
+                            <span class="cl-val">LocalMachine</span>
+                        </td>
+                        <td>Политика выполнения в области LocalMachine</td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <div class="list-2">
+            <h2>Git Cheat Sheet</h2>
+
+            <div class="list-2-container">
+                <div>
+                    <h3>Создать репозиторий</h3>
+                    <p>Создать новый локальный репозитарий</p>
+                    <code>$ git init [project_name]</code>
+                    <p>Загрузить существующий репозитарий</p>
+                    <code>$ git clone [project_url]</code>
+                    <p></p>
+                    <h3>Наблюдать за репозиторием</h3>
+                    <p>Список новых и модифицированных файлов не committed</p>
+                    <code>$ git status</code>
+                    <p>Вывести весь список изменений</p>
+                    <code>$ git log</code>
+                    <p></p>
+                </div>
+
+                <div>
+                    <h3>Ветви</h3>
+                    <p>Список всех локальных ветвей</p>
+                    <code>$ git branch</code>
+                    <p>Список всех локадьных и удаленных ветвей</p>
+                    <code>$ git branch -av</code>
+                    <p>Перейти на ветку</p>
+                    <code>$ git checkout my_branch</code>
+                    <p>Создать новую локальную ветку</p>
+                    <code>$ git branch new_branch</code>
+                    <p>Удалить ветку</p>
+                    <code>$ git branch -d my_branch</code>
+                    <p></p>
+                </div>
+
+                <div>
+                    <h3>Внесение изменений</h3>
+                    <p>Подготовка файла к <i>commit</i></p>
+                    <code>$ git add [file_name]</code>
+                    <p>Подготовить все измененные файлы к <i>commit</i></p>
+                    <code>$ git add .</code>
+                    <p><i>Commit</i> все изменные файлы</p>
+                    <code>$ git commit -m "Моё сообщение"</code>
+                    <p>Изменить последний <i>commit</i></p>
+                    <code>$ git commit --amend</code>
+                    <p>Отменить изменения, в сохранённых изменениях</p>
+                    <code>$ git reset [file_name]</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-3">
+            <h2>OpenSSL Cheat Sheet</h2>
+            <div class="list-3-container">
+                <div>
+                    <h3>Общие команды</h3>
+                    <p>Получение справки о всех командах</p>
+                    <code>openssl help</code>
+                    <p>Получение справки по команде</p>
+                    <code>openssl &lt;command&gt; -h</code>
+                    <p>Получить версию программы</p>
+                    <code>openssl version</code>
+                    <p>Получить полное описание</p>
+                    <code>openssl version -a</code>
+                </div>
+
+                <div>
+                    <h3>Генерация ключей</i></h3>
+                    <p>Генерация закрытого ключа</p>
+                    <code>openssl genpkey -out fb.key -algorithm RSA</code>
+                    <p>Показать структуру закрытого ключа</p>
+                    <code>openssl pkey -in fb.key -text -noout</code>
+                    <p>Показать открытую часть</p>
+                    <code>openssl pkey -in fb.key -pubout</code>
+                    <p>Запрос на создание сертификата</p>
+                    <code>openssl req -new -key fb.key -out fb.csr</code>
+                    <p>Просмотр запроса</p>
+                    <code>openssl req -text -in fb.csr</code>
+                    <p>Подписание сертификатов</p>
+                    <code>openssl x509 -req -days 365 -in fb.csr -signkey fb.key -out fb.crt</code>
+                    <p>Создать самозаверяющий сертификат</p>
+                    <code>openssl req -new -x509 -days 365 -key fb.key -out fb.crt</code>
+                </div>
+
+
+                <div>
+                    <h3>Проверка сертификата</h3>
+                    <p>Проверка сертификата используя доверенный сертификат</p>
+                    <code>openssl verify -CAfile cacert.pem www.example.org.pem</code>
+                    <p>Проверка с выводом цепочки</p>
+                    <code>openssl verify -show_chain -CAfile cacert.pem www.example.org.pem</code>
+                    <p>Проверка цепочки сертификатов</p>
+                    <code>openssl verify -CAfile cacert.pem -untrusted Intermediate.pem www.example.org.pem</code>
+                    <p></p>
+                    <h3>Преобразование</h3>
+                    <p>PEM -&gt; DER</p>
+                    <code>openssl x509 -inform PEM -in fb.pem -outform DER -out fb.der</code>
+                    <p>DER -&gt; PEM</p>
+                    <code>openssl x509 -inform DER -in fb.der -outform PEM -out fb.pem</code>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="list-4">
+            <h2>Chocolatey cheat sheet</h2>
+            <div class="list-4-container">
+                <div>
+                    <h3>Просмотр</h3>
+                    <p>Список пакетов</p>
+                    <code>choco list</code>
+                    <p>Список локальных пакетов</p>
+                    <code>choco list -lo</code>
+                    <p>Информация о пакете</p>
+                    <code>choco info &lt;name_packet&gt;</code>
+                    <p>Поиск пакета</p>
+                    <code>choco search &lt;name_packet&gt;</code>
+                </div>
+
+                <div>
+                    <h3>Установка</h3>
+                    <p>Установка пакета</p>
+                    <code>choco install &lt;name_packet&gt;</code>
+                    <p></p>
+                    <h3>Удаление</h3>
+                    <p>Удаление пакета</p>
+                    <code>choco uninstall &lt;name_packet&gt;</code>
+                </div>
+
+                <div>
+                    <h3>Обновление</h3>
+                    <p>Обновление всех пакетов</p>
+                    <code>choco upgrade all</code>
+                    <p>Обновление пакета</p>
+                    <code>choco upgrade &lt;name_packet&gt;</code>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer></footer>
+</body>
+
+</html>
