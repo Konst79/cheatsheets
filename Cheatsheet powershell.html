@@ -537,6 +537,21 @@
                         </td>
                         <td>Отправка 1-го пакета ICMP на <i>server02</i></td>
                     </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-command">Invoke-WebRequest (или curl)</span>
+                        </td>
+                        <td>Содержимое Web страницы</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class='cl-command'>curl</span>
+                            <span class="cl-param">-Uri</span>
+                            <span class="cl-val">'https:\\google.com'</span>
+                        </td>
+                        <td>Получить содержание страницы <i>google.com</i></td>
+                    </tr>
+
                 </table>
 
             </div>
@@ -611,6 +626,15 @@
                             <span class="cl-command">= get-data('25/05/2022')</span>
                         </td>
                         <td>Присваивание даты переменной <i>d</i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="cl-val">$d</span>
+                            <span class="cl-command">=</span>
+                            <span class="cl-param">@</span>
+                            <span class="cl-command">{k1='v1';k2='v2'}</span>
+                        </td>
+                        <td>Словарь</td>
                     </tr>
                 </table>
 
