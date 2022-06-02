@@ -700,8 +700,12 @@
                     <h3>Наблюдать за репозиторием</h3>
                     <p>Список новых и модифицированных файлов не committed</p>
                     <code>$ git status</code>
-                    <p>Вывести весь список изменений</p>
+                    <p>Вывести список изменений</p>
                     <code>$ git log</code>
+                    <p>Вывести весь список изменений</p>
+                    <code>$ git log --all</code>
+                    <p>Вывести сокращенный список изменений</p>
+                    <code>$ git log --oneline --decorate</code>
                     <p></p>
                 </div>
 
@@ -709,7 +713,7 @@
                     <h3>Ветви</h3>
                     <p>Список всех локальных ветвей</p>
                     <code>$ git branch</code>
-                    <p>Список всех локадьных и удаленных ветвей</p>
+                    <p>Список всех локальных и удаленных ветвей</p>
                     <code>$ git branch -av</code>
                     <p>Перейти на ветку</p>
                     <code>$ git checkout my_branch</code>
@@ -723,7 +727,7 @@
                 <div>
                     <h3>Внесение изменений</h3>
                     <p>Подготовка файла к <i>commit</i></p>
-                    <code>$ git add [file_name]</code>
+                    <code>$ git add &lt;file_name&gt;</code>
                     <p>Подготовить все измененные файлы к <i>commit</i></p>
                     <code>$ git add .</code>
                     <p><i>Commit</i> все изменные файлы</p>
@@ -731,7 +735,9 @@
                     <p>Изменить последний <i>commit</i></p>
                     <code>$ git commit --amend</code>
                     <p>Отменить изменения, в сохранённых изменениях</p>
-                    <code>$ git reset [file_name]</code>
+                    <code>$ git reset &lt;file_name&gt;</code>
+                    <p>Посмотреть изменения</p>
+                    <code>$ git show &lt;name&gt;</code>
                 </div>
             </div>
         </div>
