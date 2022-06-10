@@ -109,32 +109,6 @@ h4 {
 
 }
 
-.list-4 {
-    margin-top: 1em;
-    font-size: medium;
-    background-color: var(--list4-color1);
-    color: white;
-}
-
-.list-4-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 8px;
-}
-
-.list-4 > h2 {
-    background-color: var(--list4-color2);
-    padding: 10px 0 10px 3%;
-}
-
-.list-4-container code{
-
-    border-radius: 5px;
-    padding: 6px;
-    background-color: var(--list4-color2);
-
-}
-
 
 .row_1 {    
     flex-grow: 1;

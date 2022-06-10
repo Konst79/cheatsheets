@@ -1,0 +1,35 @@
+:root {
+    --list2-color1: #00334d; 
+    --list2-color2: #006699;
+    --list3-color1: #1c3a13; 
+    --list3-color2: #42872c;
+    --list4-color1: #585041;
+    --list4-color2: #7e5d1b;
+
+}
+
+.list-4 {
+    margin-top: 1em;
+    font-size: medium;
+    background-color: var(--list4-color1);
+    color: white;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 8px;
+}
+
+.list-4 > h2 {
+    background-color: var(--list4-color2);
+    padding: 10px 0 10px 3%;
+}
+
+main code{
+
+    border-radius: 5px;
+    padding: 6px;
+    background-color: var(--list4-color2);
+
+}
