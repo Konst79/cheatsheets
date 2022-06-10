@@ -51,7 +51,7 @@ h4 {
 }
 
 iframe {
-    border: none;
+    border: none 0px;
 }
 
 .list-1 {
@@ -59,24 +59,6 @@ iframe {
     display: flex;    
 }
 
-.list-2 {
-    margin-top: 1em;
-    font-size: medium;
-    background-color: var(--list2-color1);
-    color: white;        
-}
-
-
-.list-2-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.list-2 > h2 {
-    
-    background-color: var(--list2-color2);
-    padding: 10px 0 10px 3%;
-}
 
 .row_1 {    
     flex-grow: 1;
@@ -141,17 +123,4 @@ tr td:nth-child(1){
 
 .cl-val {
     color: #C71585;
-}
-
-
-
-
-.list-2-container > div {
-    padding: 0 8px;
-}
-
-.list-2 code {
-    border-radius: 5px;
-    padding: 6px;
-    background-color: var(--list2-color2);
 }

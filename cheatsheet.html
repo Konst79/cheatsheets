@@ -7,9 +7,9 @@
     <title>Cheat sheet Powershell</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        iframe {            
+        iframe {
             border: none;
-        }        
+        }
     </style>
 </head>
 
@@ -566,7 +566,7 @@
                         </td>
                         <td>Скачать файл</td>
                     </tr>
-                    
+
 
                 </table>
 
@@ -690,71 +690,7 @@
 
         </div>
 
-
-        <div class="list-2">
-            <h2>Git Cheat Sheet</h2>
-
-            <div class="list-2-container">
-                <div>
-                    <h3>Создать репозиторий</h3>
-                    <p>Создать новый локальный репозитарий</p>
-                    <code>$ git init &lt;project_name&gt;</code>
-                    <p>Загрузить существующий репозитарий</p>
-                    <code>$ git clone [project_url]</code>
-                    <p></p>
-                    <h3>Наблюдать за репозиторием</h3>
-                    <p>Список новых и модифицированных файлов не committed</p>
-                    <code>$ git status</code>
-                    <p>Вывести список изменений</p>
-                    <code>$ git log</code>
-                    <p>Вывести весь список изменений</p>
-                    <code>$ git log --all</code>
-                    <p>Вывести сокращенный список изменений</p>
-                    <code>$ git log --oneline --decorate</code>
-                    <p></p>
-                </div>
-
-                <div>
-                    <h3>Ветви</h3>
-                    <p>Список всех локальных ветвей</p>
-                    <code>$ git branch</code>
-                    <p>Список всех локальных и удаленных ветвей</p>
-                    <code>$ git branch -av</code>
-                    <p>Перейти на ветку</p>
-                    <code>$ git checkout my_branch</code>
-                    <p>Создать новую локальную ветку</p>
-                    <code>$ git branch new_branch</code>
-                    <p>Удалить ветку</p>
-                    <code>$ git branch -d my_branch</code>
-                    <p></p>
-                    <h3>Синхронизация</h3>
-                    <p>Список связанных внешних проектов</p>
-                    <code>$ git remote</code>
-                    <p>Связать с внешним проектом</p>
-                    <code>$ git remote add &lt;name&gt; &lt;URL&gt;</code>
-                    <p></p>
-                </div>
-
-                <div>
-                    <h3>Внесение изменений</h3>
-                    <p>Подготовка файла к <i>commit</i></p>
-                    <code>$ git add &lt;file_name&gt;</code>
-                    <p>Подготовить все измененные файлы к <i>commit</i></p>
-                    <code>$ git add .</code>
-                    <p><i>Commit</i> всех проиндексированных файлов</p>
-                    <code>$ git commit -m "Моё сообщение"</code>
-                    <p>Изменить последний <i>commit</i></p>
-                    <code>$ git commit --amend</code>
-                    <p>Отменить изменения, в сохранённых изменениях</p>
-                    <code>$ git reset &lt;file_name&gt;</code>
-                    <p>Посмотреть изменения</p>
-                    <code>$ git show &lt;name&gt;</code>
-                    <p>Только что внесенный изменения</p>
-                    <code>$ git diff</code>
-                    <p></p>
-                </div>
-            </div>
-        </div>
+        <iframe src="git.html" width="100%" height="650px" type="text/html"></iframe>
 
         <iframe src="openssl.htm" width="100%" height="650px" type="text/html"></iframe>
 

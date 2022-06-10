@@ -1,0 +1,36 @@
+:root {
+    --color1: #00334d; 
+    --color2: #006699;
+}
+
+code::before {
+    content: "$ ";
+}
+
+body {
+    margin: 0;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    background-color: var(--color2);
+    padding: 10px 0 10px 3%;
+}
+
+section {    
+    font-size: medium;
+    background-color: var(--color1);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;    
+}
+
+section > div {
+    padding: 0 8px;
+}
+
+code {
+    border-radius: 5px;
+    padding: 6px;
+    background-color: var(--color2);
+}
