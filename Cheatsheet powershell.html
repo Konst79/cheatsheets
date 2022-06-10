@@ -756,60 +756,9 @@
             </div>
         </div>
 
-        <div class="list-3">
-            <h2>OpenSSL Cheat Sheet</h2>
-            <div class="list-3-container">
-                <div>
-                    <h3>Общие команды</h3>
-                    <p>Получение справки о всех командах</p>
-                    <code>openssl help</code>
-                    <p>Получение справки по команде</p>
-                    <code>openssl &lt;command&gt; -h</code>
-                    <p>Получить версию программы</p>
-                    <code>openssl version</code>
-                    <p>Получить полное описание</p>
-                    <code>openssl version -a</code>
-                </div>
+        <iframe src="openssl.htm" width="100%" height="650px" type="text/html"></iframe>
 
-                <div>
-                    <h3>Генерация ключей</i></h3>
-                    <p>Генерация закрытого ключа</p>
-                    <code>openssl genpkey -out fb.key -algorithm RSA</code>
-                    <p>Показать структуру закрытого ключа</p>
-                    <code>openssl pkey -in fb.key -text -noout</code>
-                    <p>Показать открытую часть</p>
-                    <code>openssl pkey -in fb.key -pubout</code>
-                    <p>Запрос на создание сертификата</p>
-                    <code>openssl req -new -key fb.key -out fb.csr</code>
-                    <p>Просмотр запроса</p>
-                    <code>openssl req -text -in fb.csr</code>
-                    <p>Подписание сертификатов</p>
-                    <code>openssl x509 -req -days 365 -in fb.csr -signkey fb.key -out fb.crt</code>
-                    <p>Создать самозаверяющий сертификат</p>
-                    <code>openssl req -new -x509 -days 365 -key fb.key -out fb.crt</code>
-                </div>
-
-
-                <div>
-                    <h3>Проверка сертификата</h3>
-                    <p>Проверка сертификата используя доверенный сертификат</p>
-                    <code>openssl verify -CAfile cacert.pem www.example.org.pem</code>
-                    <p>Проверка с выводом цепочки</p>
-                    <code>openssl verify -show_chain -CAfile cacert.pem www.example.org.pem</code>
-                    <p>Проверка цепочки сертификатов</p>
-                    <code>openssl verify -CAfile cacert.pem -untrusted Intermediate.pem www.example.org.pem</code>
-                    <p></p>
-                    <h3>Преобразование</h3>
-                    <p>PEM -&gt; DER</p>
-                    <code>openssl x509 -inform PEM -in fb.pem -outform DER -out fb.der</code>
-                    <p>DER -&gt; PEM</p>
-                    <code>openssl x509 -inform DER -in fb.der -outform PEM -out fb.pem</code>
-                </div>
-
-            </div>
-        </div>
-
-        <iframe src="chocolatey.html" width="100%" height="800px"></iframe>
+        <iframe src="chocolatey.html" width="100%" height="800px" type="text/html"></iframe>
 
     </main>
     <footer></footer>

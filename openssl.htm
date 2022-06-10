@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>OpenSSL</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style/openssl.css" />
+</head>
+
+<body style="overflow-y: hidden;">
+    <header>
+        <h1>OpenSSL Cheat Sheet</h1>
+    </header>
+
+    <section>
+        <div>
+            <h3>Общие команды</h3>
+            <p>Получение справки о всех командах</p>
+            <p><code>openssl help</code></p>
+            <p>Получение справки по команде</p>
+            <p><code>openssl &lt;command&gt; -h</code></p>
+            <p>Получить версию программы</p>
+            <p><code>openssl version</code></p>
+            <p>Получить полное описание</p>
+            <code>openssl version -a</code>
+        </div>
+
+        <div>
+            <h3>Генерация ключей</i></h3>
+            <p>Генерация закрытого ключа</p>
+            <p><code>openssl genpkey -out fb.key -algorithm RSA</code></p>
+            <p>Показать структуру закрытого ключа</p>
+            <p><code>openssl pkey -in fb.key -text -noout</code></p>
+            <p>Показать открытую часть</p>
+            <p><code>openssl pkey -in fb.key -pubout</code></p>
+            <p>Запрос на создание сертификата</p>
+            <p><code>openssl req -new -key fb.key -out fb.csr</code></p>
+            <p>Просмотр запроса</p>
+            <p><code>openssl req -text -in fb.csr</code></p>
+            <p>Подписание сертификатов</p>
+            <p><code>openssl x509 -req -days 365 -in fb.csr -signkey fb.key -out fb.crt</code></p>
+            <p>Создать самозаверяющий сертификат</p>
+            <p><code>openssl req -new -x509 -days 365 -key fb.key -out fb.crt</code></p>
+        </div>
+
+
+        <div>
+            <h3>Проверка сертификата</h3>
+            <p>Проверка сертификата используя доверенный сертификат</p>
+            <code>openssl verify -CAfile cacert.pem www.example.org.pem</code>
+            <p>Проверка с выводом цепочки</p>
+            <code>openssl verify -show_chain -CAfile cacert.pem www.example.org.pem</code>
+            <p>Проверка цепочки сертификатов</p>
+            <code>openssl verify -CAfile cacert.pem -untrusted Intermediate.pem www.example.org.pem</code>
+            <p></p>
+            <h3>Преобразование</h3>
+            <p>PEM -&gt; DER</p>
+            <code>openssl x509 -inform PEM -in fb.pem -outform DER -out fb.der</code>
+            <p>DER -&gt; PEM</p>
+            <code>openssl x509 -inform DER -in fb.der -outform PEM -out fb.pem</code>
+        </div>
+
+    </section>
+
+</body>
+
+</html>

@@ -50,6 +50,10 @@ h4 {
 
 }
 
+iframe {
+    border: none;
+}
+
 .list-1 {
     background-color: white;
     display: flex;    
@@ -62,12 +66,6 @@ h4 {
     color: white;        
 }
 
-.list-3 {
-    margin-top: 1em;
-    font-size: medium;
-    background-color: var(--list3-color1);
-    color: white;        
-}
 
 .list-2-container {
     display: grid;
@@ -79,36 +77,6 @@ h4 {
     background-color: var(--list2-color2);
     padding: 10px 0 10px 3%;
 }
-
-
-.list-3-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 8px;
-}
-
-
-.list-3 > h2 {
-
-    background-color: var(--list3-color2);
-    padding: 10px 0 10px 3%;
-
-}
-
-.list-3-container p {
-
-    text-align:left;
-
-}
-
-.list-3 code {
-
-    border-radius: 5px;
-    padding: 6px;
-    background-color: var(--list3-color2);
-
-}
-
 
 .row_1 {    
     flex-grow: 1;
